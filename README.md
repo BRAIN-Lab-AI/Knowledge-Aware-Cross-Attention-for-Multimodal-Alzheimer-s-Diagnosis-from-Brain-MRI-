@@ -13,6 +13,8 @@
 <div align="justify">
 This project builds on recent multimodal deep learning frameworks that combine neuroimaging, cognitive scores, and clinical data for automated AD classification. By leveraging feature extraction, contrastive alignment between modalities, and modern fusion strategies, the goal is to advance multi-class Alzheimer’s detection using different modalities such as Brain MRI images and structured clinical cognitive assessments to enhance model performance, robustness and interpretability.
 </div>
+<img width="729" height="351" alt="Intro-1" src="https://github.com/user-attachments/assets/522a3036-81ce-4963-b965-8a492355af2c" />
+![2](https://github.com/user-attachments/assets/1a31e505-dcc8-42a7-8c48-80548e77cc29)
 
 ## Problem Statement
 <div align="justify">
@@ -46,7 +48,8 @@ The base reference paper (“Multistage Alignment and Fusion for Multimodal Mult
 Building on this, my project plans to extend the work by implementing a dynamic feature gating mechanism, fu and interpretability components. 
 
 In the proposed solution, I am planning to do -
-<strong><u>Proposed Solution 1:</u>To build up a cross-modal interactions model, not just to concatenate </strong> 
+
+<strong><u>Proposed Solution 1:</u> To build up a cross-modal interactions model, not just to concatenate </strong> 
 To capture complex cross-modal interactions, I will extend the fusion module by inserting a lightweight attention gate or TabTransformer block before feeding features into TabPFN. This will allow the model to dynamically weight MRI, PET, cognitive scores, and genetic features per patient and learns how much to trust each modality for each patient. Practically, this can be a simple attention gate (learned weights) or a tiny transformer over “tokens” for MRI–PET, FOD, cognitive scores, demographics, and genetics. This keeps the pipeline fast while allowing the model to capture relationships across modalities that plain concatenation misses.
 
 <strong><u>Proposed Solution 2:</u> To improve the utility of underperforming modalities (e.g., diffusion MRI) through auxiliary learning tasks</strong> 
