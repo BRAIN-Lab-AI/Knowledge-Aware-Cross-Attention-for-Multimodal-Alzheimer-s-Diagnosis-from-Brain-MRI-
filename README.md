@@ -28,9 +28,9 @@ Current state-of-the-art approaches achieve moderate performance in three-class 
 
 ## Application Area and Project Domain
 <div align="justify">
-The project lies at the intersection of medical imaging, clinical decision support, and deep learning within the healthcare AI domain. The application area is neurological disease diagnosis, specifically Alzheimer’s disease progression modelling. This work is directly relevant to computational neuroimaging, multimodal data fusion, and explainable artificial intelligence (XAI) in healthcare.
+The project lies at the intersection of medical imaging, clinical decision support, and deep learning within the healthcare AI domain. The application area is neurological disease diagnosis, specifically Alzheimer’s disease progression modelling. This work is directly relevant to computational neuroimaging, multimodal data fusion, and explainable artificial intelligence (XAI) in healthcare.<br><br>
 
-The project domain extends beyond traditional diagnostic classification to encompass predictive modeling for disease progression, biomarker discovery, and personalized risk assessment. Clinical applications include integration with electronic health record systems, radiological reporting workflows, and clinical trial screening protocols.
+The project domain extends beyond traditional diagnostic classification to encompass predictive modeling for disease progression, biomarker discovery, and personalized risk assessment. Clinical applications include integration with electronic health record systems, radiological reporting workflows, and clinical trial screening protocols.<br><br>
 
 The project’s outcomes can be applied to -
 <li><strong>Hospital memory clinics</strong> for assisting neurologists in the early detection of mild cognitive impairment (MCI);</li>
@@ -43,7 +43,7 @@ By improving the accuracy and interpretability of AD diagnosis, this research co
 
 ## What is the paper trying to do, and what are you planning to do?
 <div align="justify">
-The base reference paper <strong><i>(“Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis, MICCAI 2025”)</i></strong> proposes a novel multimodal framework that integrates T1-weighted MRI, tau PET, diffusion MRI-derived fiber orientation distributions, and Montreal Cognitive Assessment (MoCA) scores. Its primary contributions are: 1) A novel Swin-FOD model to extract order-balanced features from high-dimensional FOD data, 2) A two-stage contrastive learning framework to align MRI and PET features in a shared latent space, and 3) The use of a pre-trained TabPFN model to classify the fused multimodal features without needing fine-tuning. The model achieved ~73% accuracy on ADNI dataset (n=1147) for three-class classification, demonstrating significant improvement over existing methods and also provided Shapley analysis to quantify modality contributions.
+The base reference paper <strong><i>(“Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis, MICCAI 2025”)</i></strong> proposes a novel multimodal framework that integrates T1-weighted MRI, tau PET, diffusion MRI-derived fiber orientation distributions, and Montreal Cognitive Assessment (MoCA) scores. Its primary contributions are: 1) A novel Swin-FOD model to extract order-balanced features from high-dimensional FOD data, 2) A two-stage contrastive learning framework to align MRI and PET features in a shared latent space, and 3) The use of a pre-trained TabPFN model to classify the fused multimodal features without needing fine-tuning. The model achieved ~73% accuracy on ADNI dataset (n=1147) for three-class classification, demonstrating significant improvement over existing methods and also provided Shapley analysis to quantify modality contributions.<br><br>
 
 Building on this, my project plans to extend the work by implementing a dynamic feature gating mechanism, fu and interpretability components. 
 
