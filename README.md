@@ -14,7 +14,7 @@
 This project builds on recent multimodal deep learning frameworks that combine neuroimaging, cognitive scores, and clinical data for automated AD classification. By leveraging feature extraction, contrastive alignment between modalities, and modern fusion strategies, the goal is to advance multi-class Alzheimer’s detection using different modalities such as Brain MRI images and structured clinical cognitive assessments to enhance model performance, robustness and interpretability.
 </div>
 <img width="729" height="351" alt="Intro-1" src="https://github.com/user-attachments/assets/522a3036-81ce-4963-b965-8a492355af2c" />
-![2](https://github.com/user-attachments/assets/1a31e505-dcc8-42a7-8c48-80548e77cc29)
+![2](https://github.com/user-attachments/assets/c40a992a-3959-4230-ba71-3b66df9f8bd4)
 
 ## Problem Statement
 <div align="justify">
