@@ -39,7 +39,7 @@ The project’s outcomes can be applied to -
 
 By improving the accuracy and interpretability of AD diagnosis, this research contributes to the broader objective of developing trustworthy AI systems for clinical neurology, with potential implications for personalised treatment planning and therapeutic development.
 </div>
-<img width="1533" height="811" alt="application 101" src="https://github.com/user-attachments/assets/75bfa08a-64e5-45d9-8ff4-8923fc06d5b3" />
+<img width="1000" height="529" alt="application 101" src="https://github.com/user-attachments/assets/75bfa08a-64e5-45d9-8ff4-8923fc06d5b3" />
 
 ## What is the paper trying to do, and what are you planning to do?
 <div align="justify">
