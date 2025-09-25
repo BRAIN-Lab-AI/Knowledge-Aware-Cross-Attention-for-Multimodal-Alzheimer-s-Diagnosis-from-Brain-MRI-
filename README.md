@@ -26,7 +26,18 @@ Current state-of-the-art approaches achieve moderate performance in three-class 
 </div>
 
 ## Application Area and Project Domain
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+<div align="justify">
+The project lies at the intersection of medical imaging, clinical decision support, and deep learning within the healthcare AI domain. The application area is neurological disease diagnosis, specifically Alzheimer’s disease progression modelling. This work is directly relevant to computational neuroimaging, multimodal data fusion, and explainable artificial intelligence (XAI) in healthcare.
+
+The project domain extends beyond traditional diagnostic classification to encompass predictive modeling for disease progression, biomarker discovery, and personalized risk assessment. Clinical applications include integration with electronic health record systems, radiological reporting workflows, and clinical trial screening protocols.
+
+The project’s outcomes can be applied to -
+<li><strong>Hospital memory clinics</strong> for assisting neurologists in the early detection of mild cognitive impairment (MCI);</li>
+<li><strong>Research studies or clinical trials</strong> for identifying appropriate patient cohorts based on disease progression patterns, and</li>
+<li><strong>Large-scale public health initiatives</strong> like improving ADNI or OASIS datasets, which are focused on large-scale cognitive impairment screening</li>
+
+By improving the accuracy and interpretability of AD diagnosis, this research contributes to the broader objective of developing trustworthy AI systems for clinical neurology, with potential implications for personalised treatment planning and therapeutic development.
+</div>
 
 ## What is the paper trying to do, and what are you planning to do?
 Write 1-2 technical paragraphs (feel free to add images if you would like).
