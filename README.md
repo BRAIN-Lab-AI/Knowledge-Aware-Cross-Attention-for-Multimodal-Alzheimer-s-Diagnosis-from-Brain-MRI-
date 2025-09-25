@@ -8,7 +8,7 @@
 
 ## Introduction
 <div align="justify">
-**Alzheimer's Disease (AD)** is a progressive neurodegenerative disorder and the most common cause of dementia, representing a critical global health challenge. According to **WHO**, **57 million people** lived with dementia worldwide in 2021, with Alzheimer's disease being the most common form. Its progression from a preclinical stage to Cognitively Normal (CN), then to Mild Cognitive Impairment (MCI), and finally to Alzheimer’s disease (AD) underscores the paramount significance of early and accurate diagnosis. Early detection of MCI and accurate differentiation among these groups is crucial for timely intervention. However, this early detection is difficult due to the subtle and often overlapping brain changes between healthy aging, MCI, and early AD, making robust automated diagnosis a key research frontier. Traditional diagnostic methods rely on a mix of MRI, PET scans, neuropsychological tests, and clinical assessments, but no single modality is sufficient due to overlapping biomarkers and heterogeneous disease presentations. Recent advances in deep learning have shown promise in integrating multimodal data to improve diagnostic accuracy, interpretability, and clinical utility. While these approaches show improved performance, they introduce new challenges, particularly in effectively aligning and fusing data from these diverse and complex modalities to create a coherent and discriminative feature set for classification. 
+<strong>Alzheimer's Disease (AD)</strong>strong> is a progressive neurodegenerative disorder and the most common cause of dementia, representing a critical global health challenge. According to <strong>WHO</strong>, <strong>57 million people</strong> lived with dementia worldwide in 2021, with Alzheimer's disease being the most common form. Its progression from a preclinical stage to Cognitively Normal (CN), then to Mild Cognitive Impairment (MCI), and finally to Alzheimer’s disease (AD) underscores the paramount significance of early and accurate diagnosis. Early detection of MCI and accurate differentiation among these groups is crucial for timely intervention. However, this early detection is difficult due to the subtle and often overlapping brain changes between healthy aging, MCI, and early AD, making robust automated diagnosis a key research frontier. Traditional diagnostic methods rely on a mix of MRI, PET scans, neuropsychological tests, and clinical assessments, but no single modality is sufficient due to overlapping biomarkers and heterogeneous disease presentations. Recent advances in deep learning have shown promise in integrating multimodal data to improve diagnostic accuracy, interpretability, and clinical utility. While these approaches show improved performance, they introduce new challenges, particularly in effectively aligning and fusing data from these diverse and complex modalities to create a coherent and discriminative feature set for classification. 
 </div>
 <div align="justify">
 This project builds on recent multimodal deep learning frameworks that combine neuroimaging, cognitive scores, and clinical data for automated AD classification. By leveraging feature extraction, contrastive alignment between modalities, and modern fusion strategies, the goal is to advance multi-class Alzheimer’s detection using different modalities such as Brain MRI images and structured clinical cognitive assessments to enhance model performance, robustness and interpretability.
@@ -40,8 +40,32 @@ By improving the accuracy and interpretability of AD diagnosis, this research co
 </div>
 
 ## What is the paper trying to do, and what are you planning to do?
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+<div align="justify">
+The base reference paper (“Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis, MICCAI 2025”) proposes a novel multimodal framework that integrates T1-weighted MRI, tau PET, diffusion MRI-derived fiber orientation distributions, and Montreal Cognitive Assessment (MoCA) scores. Its primary contributions are: 1) A novel Swin-FOD model to extract order-balanced features from high-dimensional FOD data, 2) A two-stage contrastive learning framework to align MRI and PET features in a shared latent space, and 3) The use of a pre-trained TabPFN model to classify the fused multimodal features without needing fine-tuning. The model achieved ~73% accuracy on ADNI dataset (n=1147) for three-class classification, demonstrating significant improvement over existing methods and also provided Shapley analysis to quantify modality contributions.
 
+Building on this, my project plans to extend the work by implementing a dynamic feature gating mechanism, fu and interpretability components. 
+
+In the proposed solution, I am planning to do -
+<strong>Proposed Solution 1:</strong> To build up a cross-modal interactions model, not just to concatenate
+To capture complex cross-modal interactions, I will extend the fusion module by inserting a lightweight attention gate or TabTransformer block before feeding features into TabPFN. This will allow the model to dynamically weight MRI, PET, cognitive scores, and genetic features per patient and learns how much to trust each modality for each patient. Practically, this can be a simple attention gate (learned weights) or a tiny transformer over “tokens” for MRI–PET, FOD, cognitive scores, demographics, and genetics. This keeps the pipeline fast while allowing the model to capture relationships across modalities that plain concatenation misses.
+
+<strong>Proposed Solution 2:</strong> To improve the utility of underperforming modalities (e.g., diffusion MRI) through auxiliary learning tasks
+
+To improve the discriminative power of underutilized modalities like diffusion MRI (FOD), I will introduce an auxiliary learning task with a multi-task objective that forces the Swin-FOD encoder to predict tract-level microstructural biomarkers (e.g., FA, MD values) alongside the main diagnosis. This setup should enrich the learned representations and increase FOD’s contribution, especially for challenging MCI cases. The goal is to boost the usefulness of diffusion information and improve separation of MCI from CN/AD without heavy computation.
+
+<strong>Proposed Solution 3:</strong> To establish interaction-aware explainability 
+
+We will establish a multi-level interpretability protocol: 
+(a) ROI-level SHAP by pooling imaging encoder activations and reporting region-level attributions (e.g., hippocampus, PCC) 
+(b) SHAP interaction values, to quantify pairwise synergies (e.g., APOE4 × hippocampal atrophy, MoCA × PET-temporal signal); and 
+(c) Presenting individual patient-level explanations that combine SHAP decision plots with MRI/PET heatmaps (Grad-CAM). 
+These additions explain which regions and features matter, how they work together, and why a borderline MCI case was classified a certain way.
+
+<strong>Proposed Solution 4:</strong> To handle missing and noisy modalities by Modality Dropout and Adaptive Gating
+
+During training, we will randomly hide or down-weight modalities (modality “dropout”) so the model learns to cope with incomplete data. At inference, a simple gating mechanism reduces the influence of absent or low-quality inputs and relies more on the remaining signals. During optimization, random modality masks are applied to feature tokens; the pre-fusion module learns to reweight available information. In case of inference, missing modalities are zero-masked and the gate down-weights their influence. This makes the system practical for real settings where PET or some clinical fields may be unavailable.
+
+</div>
 
 # THE FOLLOWING IS SUPPOSED TO BE DONE LATER
 
