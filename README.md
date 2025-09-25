@@ -4,10 +4,13 @@
 ### Authors
 - **Team:** Sabrina Jahan Maisha
 - **Supervisor Name:** Dr. Muzammil Behzad
-- **Affiliations:** SABIC, ARAMCO and KFUPM (write your institution name, and/or KFUPM)
+- **Affiliations:** King Fahd University of Petroleum & Minerals (KFUPM)
 
 ## Introduction
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+Alzheimer's Disease (AD) is a progressive neurodegenerative disorder and the most common cause of dementia, representing a critical global health challenge. According to WHO, 57 million people lived with dementia worldwide in 2021, with Alzheimer's disease being the most common form. Its progression from a preclinical stage to Cognitively Normal (CN), then to Mild Cognitive Impairment (MCI), and finally to Alzheimer’s disease (AD) underscores the paramount significance of early and accurate diagnosis. Early detection of MCI and accurate differentiation among these groups is crucial for timely intervention. However, this early detection is difficult due to the subtle and often overlapping brain changes between healthy aging, MCI, and early AD, making robust automated diagnosis a key research frontier. Traditional diagnostic methods rely on a mix of MRI, PET scans, neuropsychological tests, and clinical assessments, but no single modality is sufficient due to overlapping biomarkers and heterogeneous disease presentations. Recent advances in deep learning have shown promise in integrating multimodal data to improve diagnostic accuracy, interpretability, and clinical utility. While these approaches show improved performance, they introduce new challenges, particularly in effectively aligning and fusing data from these diverse and complex modalities to create a coherent and discriminative feature set for classification. 
+
+This project builds on recent multimodal deep learning frameworks that combine neuroimaging, cognitive scores, and clinical data for automated AD classification. By leveraging feature extraction, contrastive alignment between modalities, and modern fusion strategies, the goal is to advance multi-class Alzheimer’s detection using different modalities such as Brain MRI images and structured clinical cognitive assessments to enhance model performance, robustness and interpretability.
+
 
 ## Problem Statement
 Write 1-2 technical paragraphs (feel free to add images if you would like).
