@@ -46,14 +46,14 @@ The base reference paper (“Multistage Alignment and Fusion for Multimodal Mult
 Building on this, my project plans to extend the work by implementing a dynamic feature gating mechanism, fu and interpretability components. 
 
 In the proposed solution, I am planning to do -
-<strong>Proposed Solution 1:</strong> To build up a cross-modal interactions model, not just to concatenate
+<strong><u>Proposed Solution 1:</u>To build up a cross-modal interactions model, not just to concatenate </strong> 
 To capture complex cross-modal interactions, I will extend the fusion module by inserting a lightweight attention gate or TabTransformer block before feeding features into TabPFN. This will allow the model to dynamically weight MRI, PET, cognitive scores, and genetic features per patient and learns how much to trust each modality for each patient. Practically, this can be a simple attention gate (learned weights) or a tiny transformer over “tokens” for MRI–PET, FOD, cognitive scores, demographics, and genetics. This keeps the pipeline fast while allowing the model to capture relationships across modalities that plain concatenation misses.
 
-<strong>Proposed Solution 2:</strong> To improve the utility of underperforming modalities (e.g., diffusion MRI) through auxiliary learning tasks
+<strong><u>Proposed Solution 2:</u> To improve the utility of underperforming modalities (e.g., diffusion MRI) through auxiliary learning tasks</strong> 
 
 To improve the discriminative power of underutilized modalities like diffusion MRI (FOD), I will introduce an auxiliary learning task with a multi-task objective that forces the Swin-FOD encoder to predict tract-level microstructural biomarkers (e.g., FA, MD values) alongside the main diagnosis. This setup should enrich the learned representations and increase FOD’s contribution, especially for challenging MCI cases. The goal is to boost the usefulness of diffusion information and improve separation of MCI from CN/AD without heavy computation.
 
-<strong>Proposed Solution 3:</strong> To establish interaction-aware explainability 
+<strong><u>Proposed Solution 3:</u> To establish interaction-aware explainability </strong> 
 
 We will establish a multi-level interpretability protocol: 
 (a) ROI-level SHAP by pooling imaging encoder activations and reporting region-level attributions (e.g., hippocampus, PCC) 
@@ -61,7 +61,7 @@ We will establish a multi-level interpretability protocol:
 (c) Presenting individual patient-level explanations that combine SHAP decision plots with MRI/PET heatmaps (Grad-CAM). 
 These additions explain which regions and features matter, how they work together, and why a borderline MCI case was classified a certain way.
 
-<strong>Proposed Solution 4:</strong> To handle missing and noisy modalities by Modality Dropout and Adaptive Gating
+<strong><u>Proposed Solution 4:</u> To handle missing and noisy modalities by Modality Dropout and Adaptive Gating</strong> 
 
 During training, we will randomly hide or down-weight modalities (modality “dropout”) so the model learns to cope with incomplete data. At inference, a simple gating mechanism reduces the influence of absent or low-quality inputs and relies more on the remaining signals. During optimization, random modality masks are applied to feature tokens; the pre-fusion module learns to reweight available information. In case of inference, missing modalities are zero-masked and the gate down-weights their influence. This makes the system practical for real settings where PET or some clinical fields may be unavailable.
 
