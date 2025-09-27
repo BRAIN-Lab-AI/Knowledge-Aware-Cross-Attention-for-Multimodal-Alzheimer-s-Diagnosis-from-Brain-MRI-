@@ -72,7 +72,8 @@ During training, we will randomly hide or down-weight modalities (modality “dr
 
 <strong><u>Proposed Solution 5:</u> To adopt consistency regularised Modality-Aware Learning Loss</strong> 
 
-To address the limitations of static fusion and inconsistent modality contributions, we propose a novel loss formulation that jointly optimizes for classification accuracy, modality reliability, and cross-modal consensus. Our approach introduces a Consistency-Regularized Modality-Aware Loss composed of two key components: (1) an uncertainty-weighted multi-task loss that dynamically adjusts the influence of each modality based on its predictive confidence, and (2) a cross-modal consistency regularization term that penalizes disagreements between modality-specific predictions.
+To address the limitations of static fusion and inconsistent modality contributions, we propose a novel loss formulation that jointly optimizes for classification accuracy, modality reliability, and cross-modal consensus. Our approach introduces a Consistency-Regularized Modality-Aware Loss composed of two key components: (1) an uncertainty-weighted multi-task loss that dynamically adjusts the influence of each modality based on its predictive confidence, and (2) a cross-modal consistency regularization term that penalizes disagreements between modality-specific predictions. The formulation will not only enhance robustness to noisy or missing data but also encourage the model to prioritize modalities with higher clinical reliability for each patient.
+
 
 </div>
 
