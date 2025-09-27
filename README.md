@@ -69,6 +69,9 @@ These additions explain which regions and features matter, how they work togethe
 <strong><u>Proposed Solution 4:</u> To handle missing and noisy modalities by Modality Dropout and Adaptive Gating</strong> 
 
 During training, we will randomly hide or down-weight modalities (modality “dropout”) so the model learns to cope with incomplete data. At inference, a simple gating mechanism reduces the influence of absent or low-quality inputs and relies more on the remaining signals. During optimization, random modality masks are applied to feature tokens; the pre-fusion module learns to reweight available information. In case of inference, missing modalities are zero-masked and the gate down-weights their influence. This makes the system practical for real settings where PET or some clinical fields may be unavailable.
+<strong><u>Proposed Solution 5:</u> To adopt consistency regularised Modality-Aware Learning Loss</strong> 
+
+To address the limitations of static fusion and inconsistent modality contributions, we propose a novel loss formulation that jointly optimizes for classification accuracy, modality reliability, and cross-modal consensus. Our approach introduces a Consistency-Regularized Modality-Aware Loss composed of two key components: (1) an uncertainty-weighted multi-task loss that dynamically adjusts the influence of each modality based on its predictive confidence, and (2) a cross-modal consistency regularization term that penalizes disagreements between modality-specific predictions.
 
 </div>
 
