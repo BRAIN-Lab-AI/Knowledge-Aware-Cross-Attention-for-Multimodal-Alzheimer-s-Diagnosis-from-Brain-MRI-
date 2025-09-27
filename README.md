@@ -47,9 +47,9 @@ By improving the accuracy and interpretability of AD diagnosis, this research co
 <div align="justify">
 The base reference paper <strong><i>(“Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis, MICCAI 2025”)</i></strong> proposes a novel multimodal framework that integrates T1-weighted MRI, tau PET, diffusion MRI-derived fiber orientation distributions, and Montreal Cognitive Assessment (MoCA) scores. Its primary contributions are: 1) A novel Swin-FOD model to extract order-balanced features from high-dimensional FOD data, 2) A two-stage contrastive learning framework to align MRI and PET features in a shared latent space, and 3) The use of a pre-trained TabPFN model to classify the fused multimodal features without needing fine-tuning. The model achieved ~73% accuracy on ADNI dataset (n=1147) for three-class classification, demonstrating significant improvement over existing methods and also provided Shapley analysis to quantify modality contributions.<br><br>
 
-Building on this, my project plans to extend the work by implementing a dynamic feature gating mechanism, fu and interpretability components. 
+Building on this, my project plans to extend the work by implementing a dynamic feature gating mechanism, and interpretability components. 
 
-In the proposed solution, I am planning to do -
+Based on the findings, I am planning to do -
 
 <strong><u>Proposed Solution 1:</u> To build up a cross-modal interactions model, not just to concatenate </strong> 
 To capture complex cross-modal interactions, I will extend the fusion module by inserting a lightweight attention gate or TabTransformer block before feeding features into TabPFN. This will allow the model to dynamically weight MRI, PET, cognitive scores, and genetic features per patient and learns how much to trust each modality for each patient. Practically, this can be a simple attention gate (learned weights) or a tiny transformer over “tokens” for MRI–PET, FOD, cognitive scores, demographics, and genetics. This keeps the pipeline fast while allowing the model to capture relationships across modalities that plain concatenation misses.
