@@ -80,7 +80,7 @@ To address the limitations of static fusion and inconsistent modality contributi
 # THE FOLLOWING IS SUPPOSED TO BE DONE LATER
 
 ### Project Documents
-- **Presentation:** [Project Presentation](/presentation.pptx)
+- **Presentation:** [Project Presentation](https://docs.google.com/presentation/d/1j4fo9gVoOepcwr647Mpc6un3EALFBDTa/edit?usp=sharing&ouid=114530776915226606795&rtpof=true&sd=true)
 - **Report:** [Project Report](/report.pdf)
 
 ### Reference Paper
