@@ -84,7 +84,7 @@ To address the limitations of static fusion and inconsistent modality contributi
 - **Report:** [Project Report](/report.pdf)
 
 ### Reference Paper
-- [Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://papers.miccai.org/miccai-2025/paper/2048_paper.pdf)
+- [Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis](https://link.springer.com/chapter/10.1007/978-3-032-05182-0_37)
 
 ### Reference Dataset
 - [LAION-5B Dataset](https://laion.ai/blog/laion-5b/)
