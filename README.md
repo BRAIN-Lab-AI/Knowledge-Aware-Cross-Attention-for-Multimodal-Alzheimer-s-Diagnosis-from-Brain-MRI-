@@ -107,8 +107,7 @@ To address the limitations of static fusion and inconsistent modality contributi
 - **SHAP (SHapley Additive exPlanations):** A game-theoretic approach to explain model outputs by providing global and local feature importance scores.
 
 ### Problem Statements
-- **Problem 1:** Existing fusion strategies rely on simple concatenation which limits the model’s ability to capturecomplex cross-modal interactions between imaging,
-clinical and cognitive features.
+- **Problem 1:** Existing fusion strategies rely on simple concatenation which limits the model’s ability to capture complex cross-modal interactions     between imaging, clinical and cognitive features.
 - **Problem 2:** Current frameworks suffer from bias or robustness due to the sensitivity in class imbalance.
 - **Problem 3:** Most of the works deploy fragmented training pipelines for optimization which prevents true end-to-end learning.
 
