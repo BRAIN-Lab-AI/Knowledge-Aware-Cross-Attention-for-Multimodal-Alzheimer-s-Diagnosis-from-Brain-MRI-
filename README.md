@@ -136,13 +136,12 @@ This repository provides an implementation of the enhanced stable diffusion mode
 - **`inference.py`**: Script for generating images using the trained model.
 
 ## Model Workflow
-The workflow of the Enhanced Stable Diffusion model is designed to translate textual descriptions into high-quality artistic images through a multi-step diffusion process:
+The workflow of the Hierarchical Cross-Modal Attention framework for Alzheimer's Disease diagnosis integrates multimodal data through a structured pipeline:
 
 1. **Input:**
-   - **Text Prompt:** The model takes a text prompt (e.g., "A surreal landscape with mountains and rivers") as the primary input.
-   - **Tokenization:** The text prompt is tokenized and processed through a text encoder (such as a CLIP model) to obtain meaningful embeddings.
-   - **Latent Noise:** A random latent noise vector is generated to initialize the diffusion process, which is then conditioned on the text embeddings.
-
+   - **Neuroimaging Data:** T1w MRI and Tau PET scans are encoded using Vision Transformer (ViT) backbones enhanced with LoRA for parameter-efficient feature extraction.
+   - **Tabular Data** Age, sex, and MoCA scores and other tabular data are processed through FiLM conditioning to modulate subsequent feature representations.
+   
 2. **Diffusion Process:**
    - **Iterative Refinement:** The conditioned latent vector is fed into a modified UNet architecture. The model iteratively refines this vector by reversing a diffusion process, gradually reducing noise while preserving the text-conditioned features.
    - **Intermediate States:** At each step, intermediate latent representations are produced that increasingly capture the structure and details dictated by the text prompt.
