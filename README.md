@@ -93,16 +93,17 @@ To address the limitations of static fusion and inconsistent modality contributi
 ## Project Technicalities
 
 ### Terminologies
-- **Diffusion Model:** A generative model that progressively transforms random noise into coherent data.
-- **Latent Space:** A compressed, abstract representation of data where complex features are captured.
-- **UNet Architecture:** A neural network with an encoder-decoder structure featuring skip connections for better feature preservation.
-- **Text Encoder:** A model that converts text into numerical embeddings for downstream tasks.
-- **Perceptual Loss:** A loss function that measures high-level differences between images, emphasizing perceptual similarity.
-- **Tokenization:** The process of breaking down text into smaller units (tokens) for processing.
-- **Noise Vector:** A randomly generated vector used to initialize the diffusion process in generative models.
-- **Decoder:** A network component that transforms latent representations back into image space.
-- **Iterative Refinement:** The process of gradually improving the quality of generated data through multiple steps.
-- **Conditional Generation:** The process where outputs are generated based on auxiliary inputs, such as textual descriptions.
+- **Hierarchical Cross-Modal Attention:** A fusion mechanism that dynamically models fine-grained interactions between different data modalities through bidirectional attention. 
+- **Multimodal Fusion:** A paradigm that integrates information from multiple heterogeneous data sources—such as MRI, PET, and tabular clinical features—to improve diagnostic prediction.
+- **LoRA (Low-Rank Adaptation):** A parameter-efficient fine-tuning technique that reduces trainable parameters by injecting trainable rank-decomposition matrices into pre-trained models.
+- **TabPFN (Tabular Prior-Data Fitted Network):** A transformer-based foundation model for tabular data that performs in-context learning using pre-computed priors.
+- **Focal Loss:** A loss function that addresses class imbalance by focusing training on hard-to-classify examples.
+- **SMOTE (Synthetic Minority Over-sampling Technique):**  A data augmentation strategy that generates synthetic samples for minority classes to mitigate class imbalance.
+- **AdaIN (Adaptive Instance Normalization):** A feature normalization technique that aligns statistical properties of feature maps between different modalities.
+- **Monte Carlo Dropout:** An inference technique that approximates model uncertainty by performing multiple forward passes with dropout enabled.
+- **Feature Alignment:** The process of projecting feature representations from different modalities into a shared latent space for semantic comparability.
+- **Ensemble Classifier:** A machine learning approach that combines predictions from multiple base models through weighted voting for robust predictions.
+- **SHAP (SHapley Additive exPlanations):** A game-theoretic approach to explain model outputs by providing global and local feature importance scores.
 
 ### Problem Statements
 - **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
