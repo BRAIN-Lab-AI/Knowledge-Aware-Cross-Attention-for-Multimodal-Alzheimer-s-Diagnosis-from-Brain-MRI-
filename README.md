@@ -117,22 +117,27 @@ To address the limitations of static fusion and inconsistent modality contributi
 - **Computational Resources:** Memory-intensive architectures hinder deployment in resource-limited settings.
 
 ### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
-1. **Optimized Architecture:** Redesign the model architecture to improve efficiency and balance image quality with faster inference.
-2. **Advanced Loss Functions:** Integrate loss functions (e.g., focal loss, consistency loss, contrastive loss, ) to better capture artistic nuances and structural details.
-3. **Enhanced Data Augmentation:** Implement sophisticated data augmentation strategies to improve the model’s robustness and reduce overfitting.
+1. **Advanced Cross-Modal Integration:** Implements bidirectional cross-attention, AdaIN-style normalization, and self-attention refinement for MRI-PET feature fusion.
+2. **Advanced Loss Functions:** Integrate loss functions (e.g., focal loss, consistency loss, contrastive loss, uncertainity) to better capture artistic nuances and structural details with parameter-efficient fine-tuning (LoRA) can stabilize training and improve generalization.
+3. **Adaptive Ensemble Classification:** Overcomes class imbalance and optimization fragmentation by using an enhanced TabPFN ensemble with SMOTE balancing and dynamic modality weighting for the final diagnosis.
 
 ### Proposed Solution: Code-Based Implementation
 This repository provides an implementation of the enhanced stable diffusion model using PyTorch. The solution includes:
 
-- **Modified UNet Architecture:** Incorporates residual connections and efficient convolutional blocks.
-- **Novel Loss Functions:** Combines Mean Squared Error (MSE) with perceptual loss to enhance feature learning.
-- **Optimized Training Loop:** Reduces computational overhead while maintaining performance.
+- **Hierarchical Cross-Modal Fusion Architecture:** Implements a specialized block featuring AdaIN style transfer, bidirectional MRI-PET cross-attention, and context gating to dynamically align heterogeneous features.
+- **Composite Loss Objective:** Combines focal loss, uncertainty regularization, contrastive loss, and consistency terms to robustly handle class imbalance and noisy data.
+- **Optimized by Parameter-Efficient Tuning:** Utilizes Vision Transformer (ViT) encoders enhanced with Low-Rank Adaptation (LoRA) and FiLM conditioning to reduce computational cost while maintaining model capacity.
+- **Enhanced TabPFN Ensemble:** Uses SMOTE-balanced data, MI+RF-based feature selection, and a dual-expert TabPFN ensemble to fuse imaging and clinical predictors for final CN/MCI/AD classification.
 
 ### Key Components
-- **`model.py`**: Contains the modified UNet architecture and other model components.
-- **`train.py`**: Script to handle the training process with configurable parameters.
-- **`utils.py`**: Utility functions for data processing, augmentation, and metric evaluations.
-- **`inference.py`**: Script for generating images using the trained model.
+- **`imp_model_pretrain3D.py`**: Contains the modified ImprovedMultiModal3DClassifier and HierarchicalCrossModalFusion modules, which are the core architectural contributions replacing the standard ALBEF fusion.
+- **`prepare_json_adni.py & prepare_tr_val_te_adni.py:`**: Scripts responsible for data preprocessing, matching MRI/PET timelines, and generating the 60/20/20 train-val-test splits with augmentation.
+- **`imp_adaptive_lora.py:`**: Contains the implementation of advanced techniques including LoRA (Low-Rank Adaptation), AdaIN, FiLM, and Context Gating used to enhance the model's efficiency and expressiveness.
+- **`imp_optimizers.py:`**: Contains the advanced optimization strategies, including layer-wise learning rate decay and custom schedulers to ensure stable convergence.
+- **`ultimate_train_ADNI.py`**: Script to handle the primary execution for stage 1, handling the end-to-end training loop, custom loss integration with objective loss function and feature extraction.
+- **`ultimate_train_ADNI.yaml:`**: The central configuration file driving the enhanced training pipeline, defining critical hyperparameters for LoRA, Focal Loss weights, layer-wise learning rates, and gradient accumulation settings.
+- **`utils.py`**: Utility functions for metrics, logging, distributed training setup, and tracking smoothed training statistics (e.g., MetricLogger, SmoothedValue).
+- **`imp_tabpfn_for_multiclass_classification_contrast_FOD_moca.py`**: Script for implementing stage 2 of the pipeline, utilizing the extracted features to train the TabPFN ensemble with SMOTE balancing, feature selection, and SHAP analysis.
 
 ## Model Workflow
 The workflow of the Hierarchical Cross-Modal Attention framework for Alzheimer's Disease diagnosis integrates multimodal data through a structured pipeline:
