@@ -1,4 +1,4 @@
-# Knowledge-Aware-Cross-Attention-for-Multimodal-Alzheimer-s-Diagnosis-from-Brain-MRI
+# Hierarchical-Cross-Modal-Attention-for-Multimodal-Multiclass-Alzheimer’s-Disease-Diagnosis
 
 ## Project Metadata
 ### Authors
