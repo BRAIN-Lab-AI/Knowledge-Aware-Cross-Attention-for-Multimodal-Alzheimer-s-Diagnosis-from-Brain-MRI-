@@ -84,7 +84,7 @@ To address the limitations of static fusion and inconsistent modality contributi
 - **Report:** [Project Report](/report.pdf)
 
 ### Reference Paper
-- [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752)
+- [Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer’s Disease Diagnosis](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://papers.miccai.org/miccai-2025/paper/2048_paper.pdf)
 
 ### Reference Dataset
 - [LAION-5B Dataset](https://laion.ai/blog/laion-5b/)
