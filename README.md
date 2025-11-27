@@ -112,13 +112,13 @@ clinical and cognitive features.
 - **Problem 3:** Most of the works deploy fragmented training pipelines for optimization which prevents true end-to-end learning.
 
 ### Loopholes or Research Areas
-- **Evaluation Metrics:** Lack of robust metrics to effectively assess the quality of generated images.
-- **Output Consistency:** Current frameworks suffer from bias or robustness due to the sensitivity in class imbalance.
-- **Computational Resources:** Training requires significant GPU compute resources, which may not be readily accessible.
+- **Concatenation:** Simple concatenation-based fusion fails to capture complex cross-modal interactions.
+- **Imbalance in Dataset:** Class imbalance leads to biased performance across patient groups.
+- **Computational Resources:** Memory-intensive architectures hinder deployment in resource-limited settings.
 
 ### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
 1. **Optimized Architecture:** Redesign the model architecture to improve efficiency and balance image quality with faster inference.
-2. **Advanced Loss Functions:** Integrate novel loss functions (e.g., perceptual loss) to better capture artistic nuances and structural details.
+2. **Advanced Loss Functions:** Integrate loss functions (e.g., focal loss, consistency loss, contrastive loss, ) to better capture artistic nuances and structural details.
 3. **Enhanced Data Augmentation:** Implement sophisticated data augmentation strategies to improve the model’s robustness and reduce overfitting.
 
 ### Proposed Solution: Code-Based Implementation
