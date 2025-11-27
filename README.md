@@ -106,13 +106,14 @@ To address the limitations of static fusion and inconsistent modality contributi
 - **SHAP (SHapley Additive exPlanations):** A game-theoretic approach to explain model outputs by providing global and local feature importance scores.
 
 ### Problem Statements
-- **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
-- **Problem 2:** Existing models suffer from slow inference times during the image generation process.
-- **Problem 3:** There is limited capability in performing style transfer and generating diverse artistic variations.
+- **Problem 1:** Existing fusion strategies rely on simple concatenation which limits the model’s ability to capturecomplex cross-modal interactions between imaging,
+clinical and cognitive features.
+- **Problem 2:** Current frameworks suffer from bias or robustness due to the sensitivity in class imbalance.
+- **Problem 3:** Most of the works deploy fragmented training pipelines for optimization which prevents true end-to-end learning.
 
 ### Loopholes or Research Areas
 - **Evaluation Metrics:** Lack of robust metrics to effectively assess the quality of generated images.
-- **Output Consistency:** Inconsistencies in output quality when scaling the model to higher resolutions.
+- **Output Consistency:** Current frameworks suffer from bias or robustness due to the sensitivity in class imbalance.
 - **Computational Resources:** Training requires significant GPU compute resources, which may not be readily accessible.
 
 ### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
