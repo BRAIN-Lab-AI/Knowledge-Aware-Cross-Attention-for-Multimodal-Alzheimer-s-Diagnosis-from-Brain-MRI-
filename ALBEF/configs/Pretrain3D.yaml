@@ -1,0 +1,33 @@
+
+train_file: ['data/ADNI_train.json']
+
+# Patch settings (Keep these standard)
+patch_size: 32
+image_res: [128, 128, 128]
+in_chans: 1
+
+# Model Architecture
+vision_width: 768
+embed_dim: 256
+depth: 6
+num_heads: 12
+
+# Training Hyperparameters for SMALL DATA (7 Subjects)
+# Batch size MUST be smaller than 7. We use 2.
+# 7 items / batch 2 = 3 batches per epoch (1 item dropped due to drop_last=True)
+batch_size: 2  
+
+# Queue size must be divisible by batch_size. 
+# 64 is small enough for this test but large enough to hold the features.
+queue_size: 64 
+
+# Standard params
+temp: 0.07
+mlm_probability: 0.25
+momentum: 0.995
+alpha: 0.4
+
+# Optimizer & Scheduler
+# We increase epochs because the dataset is tiny, so one epoch is very fast.
+optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.05}
+schedular: {sched: cosine, lr: 1e-4, epochs: 50, min_lr: 1e-5, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 5, cooldown_epochs: 0}
