@@ -142,13 +142,21 @@ The workflow of the Hierarchical Cross-Modal Attention framework for Alzheimer's
    - **Neuroimaging Data:** T1w MRI and Tau PET scans are encoded using Vision Transformer (ViT) backbones enhanced with LoRA for parameter-efficient feature extraction.
    - **Tabular Data** Age, sex, and MoCA scores and other tabular data are processed through FiLM conditioning to modulate subsequent feature representations.
    
-2. **Diffusion Process:**
-   - **Iterative Refinement:** The conditioned latent vector is fed into a modified UNet architecture. The model iteratively refines this vector by reversing a diffusion process, gradually reducing noise while preserving the text-conditioned features.
-   - **Intermediate States:** At each step, intermediate latent representations are produced that increasingly capture the structure and details dictated by the text prompt.
+2. **Adaptive Hierarchical Fusion:**
+   - **Feature Alignment:** Modality features undergo Adaptive Instance Normalization (AdaIN) for style transfer and distribution alignment.
+   - **Cross-Modal Attention:** A hierarchical cross-attention mechanism enables bidirectional interaction between MRI and PET features.
+   - **Feature Refinement:** Self-attention layers further refine the fused representations, with context gating dynamically weighting important features.
 
-3. **Output:**
-   - **Decoding:** The final refined latent representation is passed through a decoder (often part of a Variational Autoencoder setup) to generate the final image.
-   - **Generated Image:** The output is a synthesized image that visually represents the input text prompt, complete with artistic style and detail.
+3. **Multi-Objective Optimization:**
+      - **Loss Optimization:**  The combined loss function with four ways ensures balanced training across classification, uncertainty, and consistency objectives.
+
+4. **Output Prediction:**
+   - **Feature Integration:** Fused imaging features are combined with tabular data with better representations.
+   - **Enhanced TabPFN:** The integrated features are processed through an enhanced TabPFN ensemble classifier having both imaging TabPFN and tabular TabPFN.
+   - **Weighted Voting Ensemble:** Specialized classifiers for imaging and clinical data contribute through weighted voting.
+   - **Final Output:** The system generates diagnostic classification for CN/MCI/AD cases with classification metrices.
+
+  
 
 ## How to Run the Code
 
