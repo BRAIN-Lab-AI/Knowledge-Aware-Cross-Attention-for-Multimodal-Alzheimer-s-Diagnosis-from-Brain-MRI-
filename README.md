@@ -19,7 +19,8 @@ This project builds on recent multimodal deep learning frameworks that combine n
 <div align="justify">
 Current state-of-the-art approaches achieve moderate performance in three-class AD diagnosis, indicating the need for more sophisticated multimodal integration strategies. The technical challenges include:
 <ul>
-<li><strong>Problem 1:</strong> Existing fusion strategies rely on simple concatenation or fixed tabular models, limiting the model’s ability to capture complex cross-modal interactions between imaging, clinical, cognitive, and genetic features.</li>
+<li><strong>Problem 1:</strong> Existing fusion strategies rely on simple concatenation or fixed tabular models, limiting the model’s ability to capture
+complex cross-modal interactions between imaging, clinical and cognitive features.</li>
 <li><strong>Problem 2:</strong> There is a limited capability of multimodal AD models to distinguish MCI from CN/AD, partly because diffusion MRI (FOD) features are underutilised.</li>
 <li><strong>Problem 3:</strong> Global feature importance interpretability methods fail to provide fine-grained, region-level, interaction-level, or case-level explanations that are necessary for clinical trust and understanding in individual diagnoses.</li>
 <li><strong>Problem 4:</strong> Current frameworks often suffer from bias or robustness due to missing or noisy modalities (i.e. absent or incomplete data).</li>
