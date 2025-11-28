@@ -218,5 +218,4 @@ The workflow of the Hierarchical Cross-Modal Attention framework for Alzheimer's
 ## Acknowledgments
 - **Open-Source Communities:** Thanks to the contributors of PyTorch, Hugging Face, and other libraries for their amazing work.
 - **Foundation Work:** This research builds upon the foundational work "MultimodalAD: Multistage Alignment and Fusion for Multimodal Multiclass Alzheimer's Disease Diagnosis" by Huang et al. We thank the authors for their valuable contributions and for making their code publicly available at: https://github.com/huangshuo343/multimodalAD.
-- **Data Providers:** We gratefully acknowledge the Alzheimer's Disease Neuroimaging Initiative (ADNI) for providing the dataset used in this study. T
-- **Resource Providers:** Gratitude to ABC-organization for providing the computational resources necessary for this project.
+- **Data Providers:** We gratefully acknowledge the Alzheimer's Disease Neuroimaging Initiative (ADNI) for providing the dataset used in this study. 
